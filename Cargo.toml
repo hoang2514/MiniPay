@@ -1,0 +1,23 @@
+[workspace]
+resolver = "2"
+members = ["core", "host", "server", "cli", "wasm"]
+# methods/ (guest RISC Zero) được thêm vào members ở tuần 4.
+# web/ là ví React/TypeScript, không thuộc workspace Cargo.
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+minilite-core = { path = "core" }
+# Khóa cứng phiên bản RISC Zero (đặc tả mục 15.3): đổi phiên bản là đổi IMAGE_ID.
+risc0-zkvm = { version = "=3.0.6", default-features = false }
+risc0-build = "=3.0.6"
+
+[profile.dev]
+opt-level = 3
+
+[profile.release]
+debug = 1
+lto = true

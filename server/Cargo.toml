@@ -1,0 +1,7 @@
+[package]
+name = "minipay-server"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+minilite-core.workspace = true

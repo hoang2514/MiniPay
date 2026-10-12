@@ -1,0 +1,6 @@
+[package]
+name = "minilite-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
